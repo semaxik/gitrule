@@ -18,8 +18,9 @@ unsigned int total(unsigned char first, unsigned char second)
 	return first + second;
 }
 const int array_size = 4;
-
+int none = 10;
 void print_array(int* numbers, int number_count) {
+	int none = 11;
 	for (int i = 0;i < number_count;++i) {
 		std::cout << numbers[i] << std::endl;
 	}
@@ -29,6 +30,7 @@ int main()
 	int none = 8;
 	int flash = 2;
 	if (is_even_1(flash)) {
+		int none = 9;
 		std::cout << "ok" << std::endl;
 	}
 	if (is_even(none)) {
@@ -39,12 +41,28 @@ int main()
 		
 	print_array(massive, std::size(massive));
 
-	int SILENT[]{ 1,2,3 };
-	std::cin >> flashlight >> std::endl;
-	for (i < 4 ; i)
-
-
+	int number;
 	
+	int numbers[3];
+	
+	for (int i = 0; i < std::size(numbers);++i) {                
+		std::cin >> number;                                      
+		numbers[i]=number;                                       
+	}
+	print_array(numbers, std::size(numbers));
+	int reversed_numbers[std::size(numbers)];
+	int last_index = std::size(numbers) - 1;
+	for (int i = 0; i < std::size(numbers);++i) {
+		reversed_numbers[last_index - i] = numbers[i];
+
+	}
+	print_array(reversed_numbers, std::size(reversed_numbers));
+
+
+	int just_a_normal_array[3]{ 1, 2, 3 };
+	char operation;
+	std::cin >> operation;
+	if (operation == "q");
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
