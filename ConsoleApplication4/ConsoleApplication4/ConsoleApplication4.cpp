@@ -27,48 +27,45 @@ void print_array(int* numbers, int number_count) {
 }
 int main()
 {
-	int none = 8;
-	int flash = 2;
-	if (is_even_1(flash)) {
-		int none = 9;
-		std::cout << "ok" << std::endl;
-	}
-	if (is_even(none)) {
-		std::cout << "ok" << std::endl;
-	}
-	int massive[]{ 0,1,2,3,2000 };
-	
-		
-	print_array(massive, std::size(massive));
-
 	int number;
-	
+
 	int numbers[3];
-	
-	for (int i = 0; i < std::size(numbers);++i) {                
-		std::cin >> number;                                      
-		numbers[i]=number;                                       
+
+	for (int i = 0; i < std::size(numbers);++i) {
+		std::cin >> number;
+		numbers[i] = number;
 	}
 	print_array(numbers, std::size(numbers));
 	int reversed_numbers[std::size(numbers)];
 	int last_index = std::size(numbers) - 1;
-	for (int i = 0; i < std::size(numbers);++i) {
+	for (int i = 0; i < std::size(numbers); ++i) {
 		reversed_numbers[last_index - i] = numbers[i];
 
 	}
 	print_array(reversed_numbers, std::size(reversed_numbers));
 
 
-	int just_a_normal_array[3]{ 1, 2, 3 };
+	int num_a = 1;
+	int num_b = 2;
+	int num_c = 3;
+	int just_a_normal_array[3]{ num_a, num_b, num_c };
 	char operation;
 	std::cin >> operation;
-	if (operation == "q");
+	if (operation == '+'); {
+		num_a == num_b;
+		num_b == num_c;
+		num_c == num_a;
+		print_array(just_a_normal_array, std::size(just_a_normal_array));
+	}
+	if (operation == 'q'); {
+		return 0;
+	}
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
 // Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
-
 // Советы по началу работы 
+
 //   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
 //   2. В окне Team Explorer можно подключиться к системе управления версиями.
 //   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
