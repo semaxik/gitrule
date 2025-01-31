@@ -24,6 +24,14 @@ void print_array(int* numbers, int number_count) {
 	for (int i = 0;i < number_count;++i) {
 		std::cout << numbers[i] << std::endl;
 	}
+void function(int a, int b) {
+	int a = 10;
+	int b = 12;
+	&a;
+	int* b = nullptr;
+	std::cout << b << std::endl;
+}
+
 }
 int main()
 {
@@ -48,18 +56,24 @@ int main()
 	int num_a = 1;
 	int num_b = 2;
 	int num_c = 3;
+	int buffer = 0;
 	int just_a_normal_array[3]{ num_a, num_b, num_c };
 	char operation;
 	std::cin >> operation;
-	if (operation == '+'); {
-		num_a == num_b;
-		num_b == num_c;
-		num_c == num_a;
+    while (operation == '+') {
+		buffer = just_a_normal_array[0];
+		for (int i = 0;i < std::size(just_a_normal_array)-1; ++i) {
+			just_a_normal_array[i] = just_a_normal_array[i + 1];
+		}
+		just_a_normal_array[std::size(just_a_normal_array) - 1] = buffer;
 		print_array(just_a_normal_array, std::size(just_a_normal_array));
-	}
-	if (operation == 'q'); {
 		return 0;
 	}
+	while (operation == 'q') {
+		std::cout << "oke" << std::endl;
+		return 0;
+	}
+	new int*[3]{just_a_normal_array};
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
