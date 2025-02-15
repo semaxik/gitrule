@@ -24,13 +24,13 @@ void print_array(int* numbers, int number_count) {
 	for (int i = 0;i < number_count;++i) {
 		std::cout << numbers[i] << std::endl;
 	}
-	void Function(int& a, int& b) {
-		a = b;
-		b = a;
+	//void Function(int& a, int& b) {
+		//a = b;
+		//b = a;
 }
 int main()
 {
-	int number;
+	/*int number;
 
 	int numbers[3];
 
@@ -45,7 +45,7 @@ int main()
 		reversed_numbers[last_index - i] = numbers[i];
 
 	}
-	print_array(reversed_numbers, std::size(reversed_numbers));
+	print_array(reversed_numbers, std::size(reversed_numbers));*/
 
 
 	int num_a = 1;
@@ -54,21 +54,21 @@ int main()
 	int buffer = 0;
 	int just_a_normal_array[3]{ num_a, num_b, num_c };
 	char operation;
+	while (true) {
 	std::cin >> operation;
-    while (operation == '+') {
 		buffer = just_a_normal_array[0];
-		for (int i = 0;i < std::size(just_a_normal_array)-1; ++i) {
+		for (int i = 0;i < std::size(just_a_normal_array) - 1; ++i) {
 			just_a_normal_array[i] = just_a_normal_array[i + 1];
 		}
 		just_a_normal_array[std::size(just_a_normal_array) - 1] = buffer;
 		print_array(just_a_normal_array, std::size(just_a_normal_array));
-		return 0;
 	}
-	while (operation == 'q') {
-		std::cout << "oke" << std::endl;
-		return 0;
-	}
-	new int*[3]{just_a_normal_array};
+	return 0;
+		if (operation == 'q') {
+			std::cout << "oke, goodbue :)" << std::endl;
+			return 0;
+		}
+		new int* [3] {just_a_normal_array};
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

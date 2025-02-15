@@ -1,8 +1,2 @@
 ﻿  ConsoleApplication4.cpp
-E:\Git\gitrule\ConsoleApplication4\ConsoleApplication4\ConsoleApplication4.cpp(27,6): error C2601: function: недопустимые локальные определения функций
-      E:\Git\gitrule\ConsoleApplication4\ConsoleApplication4\ConsoleApplication4.cpp(22,50):
-      эта строка содержит скобку "{", которая пока не имеет парной
-  
-E:\Git\gitrule\ConsoleApplication4\ConsoleApplication4\ConsoleApplication4.cpp(28,8): error C2082: переопределение формального параметра "a"
-E:\Git\gitrule\ConsoleApplication4\ConsoleApplication4\ConsoleApplication4.cpp(28,8): error C2530: a: ссылки должны быть инициализированы
-E:\Git\gitrule\ConsoleApplication4\ConsoleApplication4\ConsoleApplication4.cpp(29,8): error C2082: переопределение формального параметра "b"
+  ConsoleApplication4.vcxproj -> C:\Git\gitrule\ConsoleApplication4\x64\Debug\ConsoleApplication4.exe
