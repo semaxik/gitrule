@@ -24,14 +24,9 @@ void print_array(int* numbers, int number_count) {
 	for (int i = 0;i < number_count;++i) {
 		std::cout << numbers[i] << std::endl;
 	}
-void function(int a, int b) {
-	int a = 10;
-	int b = 12;
-	&a;
-	int* b = nullptr;
-	std::cout << b << std::endl;
-}
-
+	void Function(int& a, int& b) {
+		a = b;
+		b = a;
 }
 int main()
 {
