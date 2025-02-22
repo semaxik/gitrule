@@ -13,8 +13,7 @@ bool is_even_1(int number)
 	return number % 2 == 0;
 }
 
-unsigned int total(unsigned char first, unsigned char second)
-{
+unsigned int total(unsigned char first, unsigned char second) {
 	return first + second;
 }
 const int array_size = 4;
@@ -24,12 +23,41 @@ void print_array(int* numbers, int number_count) {
 	for (int i = 0;i < number_count;++i) {
 		std::cout << numbers[i] << std::endl;
 	}
-	//void Function(int& a, int& b) {
-		//a = b;
-		//b = a;
 }
-int main()
-{
+enum class operation : char {
+	quit = 'q', 
+	shift_right = '+',
+	shift_left = '-'
+};
+operation get_operation() {
+	char buf;
+
+	std::cout << "select operation" << std::endl;	
+	std::cin >> buf;
+	
+	return (operation)buf;
+}
+void shift_right(int* array, size_t len) {
+	auto buffer = array[0];
+	for (int i = 0;i < len - 1; ++i) {
+		array[i] = array[i + 1];
+	}
+	array[len - 1] = buffer;
+}
+void shift_left(int* array, size_t len) {
+	int buffer = array[0];
+	for (int i = 1; i < len; i++) {
+		array[i - 1] = array[i];
+	}
+	array[len - 1] = buffer;
+}
+void sell(std::string name, int age, std::string breed) {
+	
+};
+void print_receipt(std::string name, int age) {
+
+};
+int main() {
 	/*int number;
 
 	int numbers[3];
@@ -53,21 +81,20 @@ int main()
 	int num_c = 3;
 	int buffer = 0;
 	int just_a_normal_array[3]{ num_a, num_b, num_c };
-	char operation;
-	while (true) {
-	std::cin >> operation;
-		buffer = just_a_normal_array[0];
-		for (int i = 0;i < std::size(just_a_normal_array) - 1; ++i) {
-			just_a_normal_array[i] = just_a_normal_array[i + 1];
+
+	auto selected_operation = get_operation();
+	while (selected_operation != operation::quit) {
+		if (selected_operation == operation::shift_right) {
+			shift_right(just_a_normal_array, std::size(just_a_normal_array));
+			print_array(just_a_normal_array, std::size(just_a_normal_array));
 		}
-		just_a_normal_array[std::size(just_a_normal_array) - 1] = buffer;
-		print_array(just_a_normal_array, std::size(just_a_normal_array));
+		selected_operation = get_operation();
+		if (selected_operation == operation::shift_left) {
+			shift_left(just_a_normal_array, std::size(just_a_normal_array));
+			print_array(just_a_normal_array, std::size(just_a_normal_array));
+		}
 	}
 	return 0;
-		if (operation == 'q') {
-			std::cout << "oke, goodbue :)" << std::endl;
-			return 0;
-		}
 		new int* [3] {just_a_normal_array};
 }
 
