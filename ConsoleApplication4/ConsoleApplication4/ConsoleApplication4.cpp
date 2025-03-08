@@ -31,10 +31,9 @@ enum class operation : char {
 };
 operation get_operation() {
 	char buf;
-
-	std::cout << "select operation" << std::endl;	
+	std::cout << "select operation" << std::endl;
+	std::cout << "the operation can be: [+] - shift to the right, [-] - shift to the left, [q] - exit" << std::endl;
 	std::cin >> buf;
-	
 	return (operation)buf;
 }
 void shift_right(int* array, size_t len) {
@@ -45,11 +44,11 @@ void shift_right(int* array, size_t len) {
 	array[len - 1] = buffer;
 }
 void shift_left(int* array, size_t len) {
-	int buffer = array[0];
-	for (int i = 1; i < len; i++) {
-		array[i - 1] = array[i];
+	int buffer = array[len - 1];
+	for (int i = len; i > 0; --i) {
+		array[i] = array[i - 1];
 	}
-	array[len - 1] = buffer;
+	array[0] = buffer;
 }
 void sell(std::string name, int age, std::string breed) {
 	
@@ -57,6 +56,28 @@ void sell(std::string name, int age, std::string breed) {
 void print_receipt(std::string name, int age) {
 
 };
+class Size {
+public:
+	int width;
+	int height;
+};
+
+class Paper {
+private:
+	bool flexibility;
+	Size size;
+
+public:
+	Paper(bool flex, int width, int height, Size size)
+		: flexibility(flex), size(width, height) {}
+
+	void printInfo() const {
+		std::cout << "Paper Info:";
+		std::cout << "Flexibility: " << (flexibility ? "Flexible" : "Stiff");
+		std::cout << "Size: " << size.width << " x " << size.height;
+	}
+};
+	
 int main() {
 	/*int number;
 
@@ -84,16 +105,19 @@ int main() {
 
 	auto selected_operation = get_operation();
 	while (selected_operation != operation::quit) {
-		if (selected_operation == operation::shift_right) {
+		switch (selected_operation) {
+			case operation::shift_right:
 			shift_right(just_a_normal_array, std::size(just_a_normal_array));
 			print_array(just_a_normal_array, std::size(just_a_normal_array));
-		}
-		selected_operation = get_operation();
-		if (selected_operation == operation::shift_left) {
+				break;
+			case operation::shift_left:
 			shift_left(just_a_normal_array, std::size(just_a_normal_array));
 			print_array(just_a_normal_array, std::size(just_a_normal_array));
+				break;
 		}
+		selected_operation = get_operation();
 	}
+	std::cout << "ok, have a nice day or evening" << std::endl;
 	return 0;
 		new int* [3] {just_a_normal_array};
 }
