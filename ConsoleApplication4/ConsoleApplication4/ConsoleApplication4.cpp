@@ -16,7 +16,6 @@ bool is_even_1(int number)
 unsigned int total(unsigned char first, unsigned char second) {
 	return first + second;
 }
-const int array_size = 4;
 int none = 10;
 void print_array(int* numbers, int number_count) {
 	int none = 11;
@@ -45,7 +44,7 @@ void shift_right(int* array, size_t len) {
 }
 void shift_left(int* array, size_t len) {
 	int buffer = array[len - 1];
-	for (int i = len; i > 0; --i) {
+	for (int i = len - 1; i > 0; --i) {
 		array[i] = array[i - 1];
 	}
 	array[0] = buffer;
@@ -60,6 +59,8 @@ class Size {
 public:
 	int width;
 	int height;
+	Size(int width, int height)
+		: width(width), height(height) {}
 };
 
 class Paper {
@@ -68,8 +69,8 @@ private:
 	Size size;
 
 public:
-	Paper(bool flex, int width, int height, Size size)
-		: flexibility(flex), size(width, height) {}
+	Paper(bool flex, Size size)
+		: flexibility(flex), size(size) {}
 
 	void printInfo() const {
 		std::cout << "Paper Info:";
