@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClInclude Include="cat.hpp" />
     <ClInclude Include="dog.hpp" />
+    <ClInclude Include="Pet.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
