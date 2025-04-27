@@ -5,7 +5,7 @@ public:
 	virtual void feed(int hours, int minutes) = 0;
 	virtual void sleep(int hours, int minutes) = 0;
 	virtual void walk(int hours, int minutes) = 0;
-	virtual void friends(char friends, char enemyes, int murzik, int vasya, int lio) = 0;
+	virtual void friends(char friends,char enemyes, const char murzik, const char lio, const char vasya) = 0;
 	virtual ~catPet() {}
 };
 class dogPet {
