@@ -2,13 +2,13 @@
 #include <iostream>
 #include "Pet.hpp"
 
-class Dog : public dogPet {
-	dogPet enemies[10];
+class Dog : public Pet {
+	Pet enemies[10];
 public:
 	Dog() {}
 
 	Dog(std::string name)
-		:dogPet(name) {
+		:Pet(name) {
 	}
 
 	void feed(int hours, int minutes) override {
