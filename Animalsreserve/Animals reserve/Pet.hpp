@@ -41,26 +41,5 @@ public:
 		}
 	}
 	virtual void add_friend(const Pet& friends, Pet pet, int num) {
-		//Задание N1
-		template <typename Pet>;
-		std::vector<Pet> friends;
-		friends.push_back(pet);
-		//Задание N2
-		for (int i = 0; i < enemies; ++i) {
-			std::cin >> enemyes1{ i } >> std::endl;
-		}
-		std::cin >> enemies >> std::endl;
-		for (auto& number : enemies) {
-			std::cout << number << std::endl;
-		}
-		//Задание N3
-		for (int i = 0; i < enemies; ++i) {
-			std::cin >> num >> std::endl;
-			if (enemies[i] == num) {
-				std::cout << "Найдено" << std::endl;
-			}
-			else {
-				std::cout << "Не найдено" << std::endl;
-			}
-		}
+	
 };
