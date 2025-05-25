@@ -1,2 +1,0 @@
-C:\Users\Semaxik\source\repos\ConsoleApplication4\ConsoleApplication4\x64\Debug\ConsoleApplication4.exe
-C:\Git\gitrule\ConsoleApplication4\ConsoleApplication4\x64\Debug\ConsoleApplication4.exe
