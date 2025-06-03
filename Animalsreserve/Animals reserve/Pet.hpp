@@ -3,11 +3,6 @@
 #include <vector>
 class Pet {
 private:
-	int enemy_count = 0;
-	Pet enemyes1[];
-	int friend_count = 0;
-	Pet friends1[];
-
 public:
 	virtual void feed(int hours, int minutes) = 0;
 	virtual void sleep(int hours, int minutes) = 0;
@@ -15,52 +10,31 @@ public:
 	virtual void friends(char friends, char enemyes) = 0;
 	virtual void add_enemy(const Pet& enemy, Pet pet, int num) {
 		//Задание N1
-		template <typename Pet>;
 		std::vector<Pet> enemies;
 		enemies.push_back(pet);
-		//Задание N2
-		for (int i = 0; i < enemies; ++i) {
-			std::cin >> enemyes1{i} >> std::endl;
-		}
-		std::cin >> enemies >> std::endl;
-		for (int i = 0; i < enemies; ++i) {
-			std::cout << enemies << std::endl;
-		}
-		for (auto& number : enemies) {
-			std::cout << number << std::endl;
-		}
-		//Задание N3
-		for (int i = 0; i < enemies; ++i) {
-			std::cin >> num >> std::endl;
-			if (enemies[i] == num) {
-				std::cout << "Найдено" << std::endl;
-			}
-			else {
-				std::cout << "Не найдено" << std::endl;
-			}
-		}
 	}
 	virtual void add_friend(const Pet& friends, Pet pet, int num) {
 		//Задание N1
-		template <typename Pet>;
-		std::vector<Pet> friends;
-		friends.push_back(pet);
+		std::vector<Pet> friendss;
+		friendss.push_back(pet);
+	}
+	virtual void Test_works(int num, int vector1) {
+		std::vector<Pet> vector;
+		vector1[];
 		//Задание N2
-		for (int i = 0; i < enemies; ++i) {
-			std::cin >> enemyes1{ i } >> std::endl;
+		for (auto& number : vector) {
+			std::cin >> vector1{ i } >> std::endl;
+			std::cin >> vector >> std::endl;
+			std::cout << vector << std::endl;
 		}
-		std::cin >> enemies >> std::endl;
-		for (auto& number : enemies) {
-			std::cout << number << std::endl;
-		}
-		//Задание N3
-		for (int i = 0; i < enemies; ++i) {
-			std::cin >> num >> std::endl;
-			if (enemies[i] == num) {
-				std::cout << "Найдено" << std::endl;
-			}
-			else {
-				std::cout << "Не найдено" << std::endl;
+	}
+	//Задание N3
+	bool find_num(std::vector<int> & const num, int num_find) {
+		for (auto& number : num) {
+			if (number == num_find) {
+				return true;
 			}
 		}
+		return false;
+	}
 };
