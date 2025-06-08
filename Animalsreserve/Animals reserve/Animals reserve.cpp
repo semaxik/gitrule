@@ -3,7 +3,17 @@
 #include "dog.hpp"
 #include "cat.hpp"
 #include "Pet.hpp"
-void Test_work_2() {
+
+bool find_number(std::vector<int>& const num, int num_find) {
+	for (auto& number : num) {
+		if (number == num_find) {
+			return true;
+		}
+	}
+	return false;
+}
+
+void test_work_2() {
 	std::vector<int> numbers;
 	int number_count;
 	int buffer;
@@ -19,12 +29,13 @@ void Test_work_2() {
 		std::cout << numbers[i] << std::endl;
 	}
 }
-void Test_work_3() {
+
+void test_work_3() {
 	std::vector<int> numbers;
 	int number_count;
 	int buffer;
 	int what_to_find;
-	
+
 	std::cin >> number_count;
 	for (int i = 0; i < number_count; ++i) {
 		std::cin >> buffer;
@@ -32,20 +43,12 @@ void Test_work_3() {
 	}
 	std::cin >> what_to_find;
 	if (find_number(numbers, what_to_find)) {
-			std::cout << "Найдено";
+		std::cout << "Найдено";
 	}
 	else {
-			std::cout << "Не найдено";
+		std::cout << "Не найдено";
 	}
 }
-bool find_number(std::vector<int> & const num, int num_find) {
-	for (auto& number : num) {
-		if (number == num_find) {
-			return true;
-		}
-	}
-	return false;
-}
-int main() {
 
+int main() {
 }

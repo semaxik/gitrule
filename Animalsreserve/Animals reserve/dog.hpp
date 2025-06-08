@@ -4,8 +4,6 @@
 
 class Dog : public Pet {
 public:
-	Dog() {}
-
 	Dog(std::string name)
 		:Pet(name) {
 	}
