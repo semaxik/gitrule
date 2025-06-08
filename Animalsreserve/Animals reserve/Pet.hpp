@@ -16,17 +16,21 @@ class Pet {
 private:
 	std::vector<PetId> enemies;
 	std::vector<PetId> friends;
+	std::string name;
 
 	PetId id = generate_id();
 public:
+	Pet(std::string name)
+		: name(name) {
+
+	}
 	virtual void feed(int hours, int minutes) = 0;
 	virtual void sleep(int hours, int minutes) = 0;
 	virtual void walk(int hours, int minutes) = 0;
-	virtual void add_enemy(const Pet& enemy, Pet pet, int num) {
-		//Задание N1
-		std::vector<Pet> enemies;
+	virtual void add_enemy(const Pet& enemy) {
 		enemies.push_back(enemy.id);
 	}
 	void add_friend(const Pet& _friend) {
-		std::vector<Pet> friends ;
 		friends.push_back(_friend.id);
+	}
+};

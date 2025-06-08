@@ -3,25 +3,42 @@
 #include "dog.hpp"
 #include "cat.hpp"
 #include "Pet.hpp"
-void Test_works(int num, int vector1) {
-	std::vector<Pet> vector;
-	vector1[];
-	//Задание N2
-	for (auto& number : vector)
-	for (int i = 0; i < vector; ++i) {
-		std::cin >> vector1{ i } >> std::endl;
-		std::cin >> vector >> std::endl;
-		std::cout << vector << std::endl;
+void Test_work_2() {
+	std::vector<int> numbers;
+	int number_count;
+	int buffer;
+
+	std::cin >> number_count;
+
+	for (int i = 0; i < number_count; ++i) {
+		std::cin >> buffer;
+		numbers.push_back(buffer);
 	}
-	//Задание N3
-	vector[1]{ 3 };
-	vector.find_num(3);
-	if (vector.find_num(3) == true) {
-		std::cout << "Найдено";
+
+	for (int i = 0; i < numbers.size(); ++i) {
+		std::cout << numbers[i] << std::endl;
 	}
 }
-//Задание N3
-bool find_num(std::vector<int>& const num, int num_find) {
+void Test_work_3() {
+	std::vector<int> numbers;
+	int number_count;
+	int buffer;
+	int what_to_find;
+	
+	std::cin >> number_count;
+	for (int i = 0; i < number_count; ++i) {
+		std::cin >> buffer;
+		numbers.push_back(buffer);
+	}
+	std::cin >> what_to_find;
+	if (find_number(numbers, what_to_find)) {
+			std::cout << "Найдено";
+	}
+	else {
+			std::cout << "Не найдено";
+	}
+}
+bool find_number(std::vector<int> & const num, int num_find) {
 	for (auto& number : num) {
 		if (number == num_find) {
 			return true;

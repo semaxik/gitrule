@@ -3,7 +3,6 @@
 #include "Pet.hpp"
 
 class Dog : public Pet {
-	Pet enemies[10];
 public:
 	Dog() {}
 
