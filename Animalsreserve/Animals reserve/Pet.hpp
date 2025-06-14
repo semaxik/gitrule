@@ -22,7 +22,6 @@ private:
 public:
 	Pet(std::string name)
 		: name(name) {
-
 	}
 	virtual void feed(int hours, int minutes) = 0;
 	virtual void sleep(int hours, int minutes) = 0;

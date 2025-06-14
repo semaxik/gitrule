@@ -4,7 +4,10 @@
 
 class Dog : public Pet {
 public:
+<<<<<<< HEAD
 
+=======
+>>>>>>> f7f0223d222880f76504b65fe9792015d034ca7d
 	Dog(std::string name)
 		:Pet(name) {
 	}
