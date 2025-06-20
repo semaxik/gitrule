@@ -3,12 +3,9 @@
 #include "Pet.hpp"
 class Cat : public Pet {
 public:
-<<<<<<< HEAD
-=======
 	Cat(std::string name)
 		:Pet(name) {
 	}
->>>>>>> f7f0223d222880f76504b65fe9792015d034ca7d
 	void feed(int hours, int minutes) override {
 		std::cout << "Кошка покормлена в " << hours << ":" << (minutes < 10 ? "0" : "") << minutes;
 	}
@@ -16,7 +13,6 @@ public:
 	void sleep(int hours, int minutes) override {
 		std::cout << "Кошка спит с " << hours << ":" << (minutes < 10 ? "0" : "") << minutes;
 	}
-<<<<<<< HEAD
 
 	void walk(int hours, int minutes) override {
 		std::cout << "Кошку надо выгулять в " << hours << ":" << (minutes < 10 ? "0" : "") << minutes;
@@ -69,9 +65,4 @@ public:
 		  //else {
 		  //	std::cout << "гулять можно" << std::endl;
 		  //};
-=======
-	void walk(int hours, int minutes) override {
-		std::cout << "Кошку надо выгулять в " << hours << ":" << (minutes < 10 ? "0" : "") << minutes;
-	}
->>>>>>> f7f0223d222880f76504b65fe9792015d034ca7d
 };
