@@ -75,3 +75,118 @@ int main() {
 	int number2;
 	find_pair_of_numbers_in_vector(numbers, number_to_find, number1, number2);
 }
+void test_work_2() {
+	std::vector<int> numbers;
+	int number_count;
+	int buffer;
+
+	std::cin >> number_count;
+
+	for (int i = 0; i < number_count; ++i) {
+		std::cin >> buffer;
+		numbers.push_back(buffer);
+	}
+
+	for (int i = 0; i < numbers.size(); ++i) {
+		std::cout << numbers[i] << std::endl;
+	}
+}
+
+bool find_pair_of_numbers_in_vector_two_pointers(std::vector<int> numbers, int number_to_find) {
+	int left = 0;
+	int right = numbers.size() - 1;
+	while (left < right) {
+		int left_number = numbers[left];
+		int right_number = numbers[right];
+		if (left_number + right_number == number_to_find) {
+			std::cout << left_number << " + " << right_number << std::endl;
+			return true;
+		}
+		if (left_number + right_number > number_to_find) {
+			right--;
+		}
+		else {
+			left++;
+		}
+	}
+	return false;
+}
+
+bool find_pair_of_numbers_in_vector_naive(std::vector<int> numbers, int number_to_find) {
+	for (int k = 0; k < numbers.size(); ++k) {
+		for (int i = 0; i < numbers.size(); ++i) {
+			int left_number = numbers[k];
+			int right_number = numbers[i];
+			if (left_number + right_number == number_to_find && left_number != right_number) {
+				std::cout << left_number << " + " << right_number << std::endl;
+				return true;
+			}
+		}
+	}
+
+	return false;
+};
+
+int sum(int a, int b) {
+	return a + b;
+}
+
+void print(int number) {
+	std::cout << number << std::endl;
+}
+void print(double number) { // перегруженная функция для чисел с плавающей точкой
+	std::cout << number << std::endl;
+}
+void print(unsigned long number) { // перегруженная функция для беззнаковых "длинных" целых
+	std::cout << number << std::endl;
+}
+void print(std::string string) { //перегруженная функция для строк
+	std::cout << string << std::endl;
+}
+int sum_of_all_elements_of_array_or_vector_of_int_numbers(std::vector<int> vector) {
+	int sum = 0;
+	for (auto& numbers : vector) {
+		return sum += vector[numbers];
+	}
+}
+int sum_of_all_elements_of_array_or_vector_of_double_numbers(std::vector<double> vector) {
+	int sum = 0;
+	for (auto& numbers : vector) {
+		return sum += vector[numbers];
+	}
+}
+void break_vector_by_2_vectors(std::vector<int> vector){
+	int number_;
+	std::vector<int> vector_with_smaller_numbers;
+	std::vector<int> vector_with_biger_numbers;
+
+	std::cin >> number_;
+	for (auto& numbers : vector)
+		if (vector[numbers] < number_) {
+		vector_with_smaller_numbers.push_back(vector[numbers]);
+		}
+		else {
+			vector_with_biger_numbers.push_back(vector[numbers]);
+		}
+	}
+int main() {
+	double a_floating = 1.5;
+	int a_number = 10;
+	unsigned long a_long_number = 0xFFFFFFFF;
+	std::string a_string = "10";
+
+	print(a_number);
+	print(a_floating);
+	print(a_long_number);
+	print(a_string);
+
+	std::vector<int> numbers = { 1,2,3,4 };
+	int number_to_find;
+
+	std::cout << "number to find a pair for: "; //перед тем как что-то запрашивать надо дать знать пользователю
+	//что от него требуется
+	std::cin >> number_to_find;
+
+	find_pair_of_numbers_in_vector_two_pointers(numbers, number_to_find);
+	find_pair_of_numbers_in_vector_naive(numbers, number_to_find);
+}
