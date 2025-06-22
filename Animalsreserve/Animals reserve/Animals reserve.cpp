@@ -158,14 +158,14 @@ void break_vector_by_2_vectors(std::vector<int> vector) {
 	std::vector<int> vector_with_biger_numbers;
 
 	std::cin >> number_;
-	for (auto& numbers : vector) {
-		if (vector[numbers] < number_) {
-			vector_with_smaller_numbers.push_back(vector[numbers]);
-			std::cout << vector_with_smaller_numbers;
+	for (int i = 0; i < size(vector); i++) {
+		if (vector[i] < number_) {
+			vector_with_smaller_numbers.push_back(vector[i]);
+			std::cout << "Числа меньше: " << vector_with_smaller_numbers;
 		}
-		if (vector[numbers] > number_) {
-			vector_with_biger_numbers.push_back(vector[numbers]);
-			std::cout << vector_with_biger_numbers;
+		if (vector[i] > number_) {
+			vector_with_biger_numbers.push_back(vector[i]);
+			std::cout << "Числа больше: " << vector_with_biger_numbers;
 		}
 	}
 };
