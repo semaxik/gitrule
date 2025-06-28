@@ -56,18 +56,18 @@ bool find_number(std::vector<int>& const num, int num_find) {
 //	}
 //	return false;
 //}
-bool find_pair_of_numbers_in_vector(std::vector<int> numbers, int number_to_find, int number1, int number2) {
-	std::cin >> number_to_find;
-	for (number1 = 0; number1 < numbers.size(); ++number1) {
-		for (int i = 0; i < numbers.size(); ++i) {
-			if (number1 + numbers[i] == number_to_find) {
-				std::cout << number1, '+', numbers[i];
-				return true;
-			}
-		}
-	}
-	return false;
-};
+//bool find_pair_of_numbers_in_vector(std::vector<int> numbers, int number_to_find, int number1, int number2) {
+//	std::cin >> number_to_find;
+//	for (number1 = 0; number1 < numbers.size(); ++number1) {
+//		for (int i = 0; i < numbers.size(); ++i) {
+//			if (number1 + numbers[i] == number_to_find) {
+//				std::cout << number1 << '+' << numbers[i];
+//				return true;
+//			}
+//		}
+//	}
+//	return false;
+//};
 void test_work_2() {
 	std::vector<int> numbers;
 	int number_count;
@@ -136,39 +136,89 @@ void print(unsigned long number) { // перегруженная функция 
 void print(std::string string) { //перегруженная функция для строк
 	std::cout << string << std::endl;
 }
-int sum_of_all_elements_of_array_or_vector_of_int_numbers(std::vector<int> vector) {
+int sum_of_all_elements(std::vector<int> vector) {
 	int sum = 0;
-	for (int i = 0; i < size(vector); i++) {
+	for (int i = 0; i < vector.size(); i++) {
 		sum += vector[i];
-		std::cout << sum << std::endl;
 	}
-	return 0;
+	return sum;
 }
-int sum_of_all_elements_of_array_or_vector_of_double_numbers(std::vector<double> vector) {
+int sum_of_all_elements(std::vector<double> vector) {
 	double sum = 0;
-	for (int i = 0; i < size(vector); i++) {
+	for (int i = 0; i < vector.size(); i++) {
 		sum += vector[i];
-		std::cout << sum << std::endl;
 	}
-	return 0;
+	return sum;
 }
-void break_vector_by_2_vectors(std::vector<int> vector) {
-	int number_;
+void break_vector_by_2_vectors(std::vector<int> vector, int number_) {
 	std::vector<int> vector_with_smaller_numbers;
 	std::vector<int> vector_with_biger_numbers;
 
 	std::cin >> number_;
-	for (int i = 0; i < size(vector); i++) {
+	for (int i = 0; i < vector.size(); i++) {
 		if (vector[i] < number_) {
 			vector_with_smaller_numbers.push_back(vector[i]);
-			std::cout << "Числа меньше: " << vector_with_smaller_numbers;
+			//std::cout << "Числа меньше: " << vector_with_smaller_numbers;
 		}
 		if (vector[i] > number_) {
 			vector_with_biger_numbers.push_back(vector[i]);
-			std::cout << "Числа больше: " << vector_with_biger_numbers;
+			//std::cout << "Числа больше: " << vector_with_biger_numbers;
 		}
 	}
 };
+int compare(std::vector<int> a, std::vector<int> b) {
+	// -1x (a > b), 0 (a = b), 1x (b > a)
+	if (a.size() == b.size()) {
+		for (int i = 0; i < a.size(); ++i) {
+			if (a[i] > b[i]) {
+				return -1;
+			}
+			if (a[i] < b[i]) {
+				return 1;
+			}
+		}
+		return 0;
+	}
+	auto min_size = a.size() > b.size() ? b.size() : a.size();
+	int index = 0;
+	while (index < min_size) {
+		if (a[index] > b[index]) {
+			return -1;
+		}
+		if (a[index] < b[index]) {
+			return 1;
+		}
+		index++;
+	}
+	return a.size() < b.size() ? 1 : -1;
+}
+int maximum_index(std::vector<int> numbers) {
+	int max_index;
+	for (int i = 0; i < numbers.size(); ++i) {
+		max_index = i;
+	}
+	return max_index;
+}
+int maximum_element(std::vector<int> numbers) {
+	int max_element;
+	for (int i = 0; i < numbers.size(); ++i) {
+		max_element = i;
+	}
+	return max_element;
+}
+void reverse(std::vector<int> numbers) {
+	std::vector<int> reversed_numbers;
+
+	for (int i = 0; i < numbers.size(); ++i) {
+		std::cin >> numbers[i];
+	}
+	int index = 0; index < numbers.size();
+	numbers[0] = reversed_numbers[index];
+	for (int i = 0; i < numbers.size(); ++i) {
+		//каждый элемент должен встать на место (максимального элемента - 1)
+		reversed_numbers[i] = maximum_index(numbers) - 1;
+	}
+}
 int main() {
 	/*double a_floating = 1.5;
 	int a_number = 10;
@@ -177,6 +227,9 @@ int main() {
 	std::vector<int> vector{ 1, 4, 6 };
 	std::vector<double> vector_double{ 1.2, 4.0, 6.8 };
 	std::vector<int> vector_{ 1, 4, 6 };
+	std::vector<int> numbers{ 1, 7, 3, 5, 3 };
+	int total;
+	int number;
 
 	/*print(a_number);
 	print(a_floating);
@@ -192,7 +245,7 @@ int main() {
 
 	/*find_pair_of_numbers_in_vector_two_pointers(numbers, number_to_find);
 	find_pair_of_numbers_in_vector_naive(numbers, number_to_find);*/
-	sum_of_all_elements_of_array_or_vector_of_int_numbers(vector);
-	sum_of_all_elements_of_array_or_vector_of_double_numbers(vector_double);
-	break_vector_by_2_vectors(vector_);
+	total = sum_of_all_elements(vector);
+	total = sum_of_all_elements(vector_double);
+	reverse(numbers);
 }
